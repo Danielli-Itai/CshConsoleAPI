@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CshConsoleAPI
 {
-	public delegate bool CommandCb(string[] parameters);
+	public delegate String CommandCb(string[] parameters);
 
 
 	public class Commands
@@ -45,7 +45,7 @@ namespace CshConsoleAPI
 			return command;
 		}
 
-		public bool Exec(string name, string[] parameters)
+		public String Exec(string name, string[] parameters)
 		{
 			CommandCb command = Find(name);
 			return (command(parameters));

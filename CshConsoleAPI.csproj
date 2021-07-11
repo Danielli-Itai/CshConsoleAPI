@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,15 +45,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseLib\ApplicationGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseLib\ApplicationGUI.Designer.cs">
+      <DependentUpon>ApplicationGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseLib\BaseLib.cs" />
     <Compile Include="ConsoleApplication\AppCommands.cs" />
     <Compile Include="Command\Commands.cs" />
     <Compile Include="Command\CommandsApi.cs" />
-    <Compile Include="ConsoleApplication\ConsoleApplication.cs" />
+    <Compile Include="ConsoleApplication.cs" />
+    <Compile Include="DialogApplication\DialogCommands.cs" />
+    <Compile Include="DialogApplication\SimpleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogApplication\SimpleDialog.Designer.cs">
+      <DependentUpon>SimpleDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseLib\ApplicationGUI.resx">
+      <DependentUpon>ApplicationGUI.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

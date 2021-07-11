@@ -19,6 +19,8 @@ namespace CshConsoleAPI
 		const char PARAMS_SEP = ',';
 		const char PARAMS_END = ')';
 
+	
+
 
 
 		/***
@@ -68,7 +70,7 @@ namespace CshConsoleAPI
 		/***
 		* Call for command execution providing a parameters list.
 		*/
-		public static bool CommandExec(ref Commands Commands_list, string command_line)
+		public static String CommandExec(ref Commands Commands_list, string command_line)
 		{
 			string name = CommandName(command_line);
 			string[] parameters = CommandParams(command_line);

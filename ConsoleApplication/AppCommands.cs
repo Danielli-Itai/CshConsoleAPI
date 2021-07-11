@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 
 
-
 namespace CshConsoleAPI
 {
 	public class AppCommands
 	{
-		public const string CMD_PROMPED = "\n>";
+		public const string CMD_PROMPED = ">";
 		public const string CMD_ECHO = "echo";
 		public const string CMD_EXIT = "exit";
+
+		public const string CMD_OK = "ok";
+		public const string CMD_FAILE = "faile";
 
 
 
@@ -24,12 +26,13 @@ namespace CshConsoleAPI
 		* Echo demonstrates a command execution function.
 		* the command prints the parameters it receives.
 		*/
-		public static bool CommandEcho(string[] parameters)
+		public static String CommandEcho(string[] parameters)
 		{
+			String result = "";
 			foreach (string param in parameters){
-				Console.WriteLine(param);
+				result += param + " ";
 			}
-			return (true);
+			return (result.TrimEnd());
 		}
 
 
@@ -37,10 +40,10 @@ namespace CshConsoleAPI
 		* Exit terminates the application.
 		* the command prints the exit messsage.
 		*/
-		public static bool CommandExit(string[] parameters)
+		public static String CommandExit(string[] parameters)
 		{
 			Console.WriteLine(CMD_EXIT);
-			return (false);
+			return(CMD_EXIT);
 		}
 	}
 }
