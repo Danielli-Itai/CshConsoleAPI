@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseLib\ApplicationGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseLib\ApplicationGUI.Designer.cs">
-      <DependentUpon>ApplicationGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaseLib\BaseLib.cs" />
     <Compile Include="ConsoleApplication\AppCommands.cs" />
     <Compile Include="Command\Commands.cs" />
@@ -69,10 +63,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BaseLib\ApplicationGUI.resx">
-      <DependentUpon>ApplicationGUI.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\CshApplication\CshApplication.csproj">
+      <Project>{d9937b6d-6bbe-4ded-94e8-8805b7a4c9d5}</Project>
+      <Name>CshApplication</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

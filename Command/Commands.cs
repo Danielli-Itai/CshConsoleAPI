@@ -41,14 +41,21 @@ namespace CshConsoleAPI
 
 		public CommandCb Find(string name)
 		{
-			CommandCb command = commands_dic[name];
+			CommandCb command = null;
+			try{
+				command = commands_dic[name];
+			}catch(Exception e){	}
 			return command;
 		}
 
 		public String Exec(string name, string[] parameters)
 		{
+			String result = "";
 			CommandCb command = Find(name);
-			return (command(parameters));
+			if(null != command){
+				result = command(parameters);
+			}
+			return (result);
 		}
 	}
 }
